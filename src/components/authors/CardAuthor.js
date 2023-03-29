@@ -1,10 +1,7 @@
 import React from 'react';
 import { useQuery } from "@apollo/client";
 import { GET_AUTHORS_INFO } from "../../graphql/queries";
-import { Typography , CardActionArea } from "@mui/material";
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Loader from '../shared/Loader';
 
 
@@ -12,7 +9,9 @@ import Loader from '../shared/Loader';
 const CardAuthor = () => {
   const { loading, data, errors } = useQuery(GET_AUTHORS_INFO);
   console.log(data);
-  const {author: { name, field, avatar }} = data;
+  const {authors} = data;
+  console.log(authors);
+
   
 
   if (loading) return <Loader />;
