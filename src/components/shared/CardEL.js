@@ -18,7 +18,7 @@ function CardEL({ title, slug, coverPhoto, author}) {
       <CardMedia component="img" height="194" image={coverPhoto.url} alt={slug} />
       {/* Article Title */}
       <CardContent>
-        <Typography component="h3" variant="h6" color="text.primary" fontWeight={600}>
+        <Typography component="h3" variant="h6" color="text.primary" fontWeight={600} sx={{height:"100px" }}>
           {title}
         </Typography>
       </CardContent>
