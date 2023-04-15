@@ -1,14 +1,16 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import sanitizeHtml from "sanitize-html";
 import { GET_AUTHOR_INFO } from "../../graphql/queries";
 import { Avatar, Container, Grid, Typography } from "@mui/material";
+import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import CardEL from "../shared/CardEL";
 import Loader from "../shared/Loader";
 
 function AuthorPage() {
   const { slug } = useParams();
+  const navigate = useNavigate();
 
   const { loading, data, errors } = useQuery(GET_AUTHOR_INFO, {
     variables: { slug },
@@ -21,14 +23,13 @@ function AuthorPage() {
 
   return (
     <Container maxWidth="lg">
-      <Grid container mt={10}>
-        <Grid
-          item
-          xs={12}
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-        >
+      <div style={{marginTop: "60px"}}>
+        <div style={{display: "flex", justifyContent:"flex-end"}}>
+          <ArrowBackRoundedIcon onClick={() => navigate(-1)} />
+        </div>
+      <Grid container>
+      {/* AUTHOR FIELD */}
+        <Grid item xs={12} display="flex" flexDirection="column" alignItems="center">
           <Avatar src={avatar.url} sx={{ width: 250, height: 250 }} />
           <Typography component="h3" variant="h5" fontWeight={700} mt={4}>
             {name}
@@ -37,6 +38,7 @@ function AuthorPage() {
             {field}
           </Typography>
         </Grid>
+        {/* AUTHOR DESCRIPTION */}
         <Grid item xs={12} mt={5}>
           <div
             dangerouslySetInnerHTML={{
@@ -44,6 +46,7 @@ function AuthorPage() {
             }}
           ></div>
         </Grid>
+        {/* AUTHOR ARTICLE */}
         <Grid item xs={12} mt={6}>
           <Typography component="h3" variant="h5" fontWeight={700}>
             مقالات {name}
@@ -57,6 +60,7 @@ function AuthorPage() {
           </Grid>
         </Grid>
       </Grid>
+      </div>
     </Container>
   );
 }
