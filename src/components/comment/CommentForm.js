@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Grid, TextField, Typography } from "@mui/material";
+import { Button, Grid, TextField, Typography, InputLabel } from "@mui/material";
 import { useMutation } from "@apollo/client";
 import { SEND_COMMENT } from "../../graphql/mutations";
 import { ToastContainer, toast } from "react-toastify";
@@ -49,8 +49,10 @@ function CommentForm({ slug }) {
         </Typography>
       </Grid>
       <Grid item xs={12} m={2}>
+        <InputLabel>
+          نام کاربری      
+        </InputLabel>
         <TextField
-          label="نام کاربری"
           variant="outlined"
           sx={{ width: "100%" }}
           value={name}
@@ -58,8 +60,10 @@ function CommentForm({ slug }) {
         />
       </Grid>
       <Grid item xs={12} m={2}>
+        <InputLabel>
+        ایمیل
+        </InputLabel>
         <TextField
-          label="ایمیل"
           variant="outlined"
           sx={{ width: "100%" }}
           value={email}
@@ -67,8 +71,10 @@ function CommentForm({ slug }) {
         />
       </Grid>
       <Grid item xs={12} m={2}>
+        <InputLabel>
+        متن کامنت
+        </InputLabel>
         <TextField
-          label="متن کامنت"
           variant="outlined"
           sx={{ width: "100%" }}
           value={text}
