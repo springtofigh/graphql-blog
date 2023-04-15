@@ -22,6 +22,7 @@ const GET_BLOGS_INFO = gql`
 const GET_AUTHORS_INFO = gql`
   query {
     authors {
+      field
       id
       name
       slug
