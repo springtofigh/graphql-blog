@@ -20,15 +20,15 @@ const Authors = () => {
 
 
   return (
-    <Container maxWidth="lg" style={{ height: "1000px"}}> 
-    <div style={{marginTop: "60px"}}>
+    <Container maxWidth="lg"> 
+    <div style={{marginTop: "60px" , height: "1400px"}}>
         <div style={{display: "flex", justifyContent:"flex-end"}}>
           <ArrowBackRoundedIcon onClick={() => navigate(-1)} />
         </div>
       <Grid container spacing={2} padding={3}>
       {data.authors.map((author) => (
         <Grid item xs={12} sm={6} md={3} mt={2} key={author.id}>
-          <Card sx={{ maxWidth: 345 , height: "300px" , boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px", borderRadius: 4 }}>
+          <Card sx={{ maxWidth: 500 , height: "300px" , boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px", borderRadius: 4 }}>
     <CardActionArea>
       <CardMedia component="img" height="160" width="160" image={author.avatar.url} alt="profile"/>
       <CardContent>
