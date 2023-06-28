@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { GET_BLOGS_INFO } from "../../graphql/queries";
 import { Container, Grid } from "@mui/material";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
-import CardEL from "../shared/CardEL";
+import BlogsCard from "../shared/BlogsCard";
 import Loader from "../shared/Loader";
 
 
@@ -25,7 +25,7 @@ const Blogs = () => {
         <Grid container spacing={2} mt={2}>
         {data.posts.map((post) => (
             <Grid item xs={12} sm={6} md={4} key={post.id}>
-                <CardEL {...post} />
+                <BlogsCard {...post} />
             </Grid>
     ))}
     </Grid>
