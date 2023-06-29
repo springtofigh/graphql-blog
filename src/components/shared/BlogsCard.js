@@ -3,7 +3,6 @@ import { Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, 
 import { Link } from "react-router-dom";
 
 function BlogsCard({ title, slug, coverPhoto , author}) {
-    console.log(author);
 
     return (
         <Card sx={{ boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px", borderRadius: 4 }}>
