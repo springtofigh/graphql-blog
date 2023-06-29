@@ -30,17 +30,17 @@ const Authors = () => {
         <Grid item xs={12} sm={6} md={3} mt={2} key={author.id}>
           <Card sx={{ maxWidth: 500 , height: "300px" , boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px", borderRadius: 4 }}>
     <CardActionArea>
+    <Link to={`/authors/${author.slug}`} style={{ textDecoration: "none"}} >
       <CardMedia component="img" height="160" width="160" image={author.avatar.url} alt="profile"/>
       <CardContent>
-      <Link to={`/authors/${author.slug}`} style={{ textDecoration: "none"}} >
         <Typography gutterBottom variant="h6" component="div">
         {author.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
                 حوزه فعالیت: {author.field}
         </Typography>
-      </Link>
       </CardContent>
+      </Link>
     </CardActionArea>
   </Card>
         </Grid>
